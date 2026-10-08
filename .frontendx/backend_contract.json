@@ -1,0 +1,2171 @@
+{
+  "endpoints": [
+    {
+      "path": "/api/v1/grades",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "Integer"
+        },
+        {
+          "name": "limit",
+          "type": "Integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "String"
+        },
+        {
+          "name": "sortDir",
+          "type": "String"
+        },
+        {
+          "name": "studentId",
+          "type": "UUID"
+        },
+        {
+          "name": "courseId",
+          "type": "UUID"
+        },
+        {
+          "name": "assignmentId",
+          "type": "UUID"
+        },
+        {
+          "name": "grade",
+          "type": "String"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<GradeResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "GradeResponse[]"
+            },
+            {
+              "name": "page",
+              "type": "int"
+            },
+            {
+              "name": "limit",
+              "type": "int"
+            },
+            {
+              "name": "total",
+              "type": "long"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/grades/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<GradeResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "GradeResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/grades",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "GradeRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<GradeResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "GradeResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/grades/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "GradeRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<GradeResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "GradeResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/grades/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/courses",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "Integer"
+        },
+        {
+          "name": "limit",
+          "type": "Integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "String"
+        },
+        {
+          "name": "sortDir",
+          "type": "String"
+        },
+        {
+          "name": "departmentId",
+          "type": "UUID"
+        },
+        {
+          "name": "teacherId",
+          "type": "UUID"
+        },
+        {
+          "name": "semester",
+          "type": "Integer"
+        },
+        {
+          "name": "status",
+          "type": "String"
+        },
+        {
+          "name": "search",
+          "type": "String"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<CourseResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "CourseResponse[]"
+            },
+            {
+              "name": "page",
+              "type": "int"
+            },
+            {
+              "name": "limit",
+              "type": "int"
+            },
+            {
+              "name": "total",
+              "type": "long"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/courses/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<CourseResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "CourseResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/courses",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "CourseRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<CourseResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "CourseResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/courses/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "CourseRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<CourseResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "CourseResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/courses/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/enrollments",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "Integer"
+        },
+        {
+          "name": "limit",
+          "type": "Integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "String"
+        },
+        {
+          "name": "sortDir",
+          "type": "String"
+        },
+        {
+          "name": "studentId",
+          "type": "UUID"
+        },
+        {
+          "name": "courseId",
+          "type": "UUID"
+        },
+        {
+          "name": "semester",
+          "type": "Integer"
+        },
+        {
+          "name": "status",
+          "type": "EnrollmentStatus"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<EnrollmentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "EnrollmentResponse[]"
+            },
+            {
+              "name": "page",
+              "type": "int"
+            },
+            {
+              "name": "limit",
+              "type": "int"
+            },
+            {
+              "name": "total",
+              "type": "long"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/enrollments/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<EnrollmentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "EnrollmentResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/enrollments",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "EnrollmentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<EnrollmentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "EnrollmentResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/enrollments/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "EnrollmentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<EnrollmentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "EnrollmentResponse"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/enrollments/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "LoginRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "AuthTokensResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/register",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "RegisterRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "UserResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/refresh",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "RefreshRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "AuthTokensResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/logout",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "LogoutRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "Void",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/auth/me",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "UserResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/health",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "HealthResponse",
+          "fields": [
+            {
+              "name": "status",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/departments",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "search",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<DepartmentResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/departments/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "DepartmentResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/departments",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "DepartmentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "DepartmentResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/departments/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "DepartmentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "DepartmentResponse",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/departments/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "Void",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/assignments",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        },
+        {
+          "name": "courseId",
+          "type": "UUID"
+        },
+        {
+          "name": "status",
+          "type": "AssignmentStatus"
+        },
+        {
+          "name": "search",
+          "type": "string"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<AssignmentResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/assignments/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<AssignmentResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/assignments",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "AssignmentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<AssignmentResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/assignments/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "AssignmentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<AssignmentResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/assignments/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/attendance",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        },
+        {
+          "name": "studentId",
+          "type": "UUID"
+        },
+        {
+          "name": "courseId",
+          "type": "UUID"
+        },
+        {
+          "name": "status",
+          "type": "AttendanceStatus"
+        },
+        {
+          "name": "dateFrom",
+          "type": "LocalDate"
+        },
+        {
+          "name": "dateTo",
+          "type": "LocalDate"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<AttendanceResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/students/{studentId}/attendance",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "studentId",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        },
+        {
+          "name": "courseId",
+          "type": "UUID"
+        },
+        {
+          "name": "status",
+          "type": "AttendanceStatus"
+        },
+        {
+          "name": "dateFrom",
+          "type": "LocalDate"
+        },
+        {
+          "name": "dateTo",
+          "type": "LocalDate"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<AttendanceResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/courses/{courseId}/attendance",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "courseId",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        },
+        {
+          "name": "studentId",
+          "type": "UUID"
+        },
+        {
+          "name": "status",
+          "type": "AttendanceStatus"
+        },
+        {
+          "name": "dateFrom",
+          "type": "LocalDate"
+        },
+        {
+          "name": "dateTo",
+          "type": "LocalDate"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<AttendanceResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/attendance/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<AttendanceResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/attendance",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "AttendanceRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<AttendanceResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/attendance/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "AttendanceRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<AttendanceResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/notifications",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        },
+        {
+          "name": "isRead",
+          "type": "boolean"
+        },
+        {
+          "name": "type",
+          "type": "NotificationType"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<NotificationResponse>",
+          "fields": [
+            {
+              "name": "id",
+              "type": "UUID"
+            },
+            {
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "name": "type",
+              "type": "NotificationType"
+            },
+            {
+              "name": "isRead",
+              "type": "boolean"
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/notifications/read-all",
+      "method": "PATCH",
+      "path_params": [],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<MarkAllReadResponse>",
+          "fields": [
+            {
+              "name": "updatedCount",
+              "type": "integer"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/notifications/{id}/read",
+      "method": "PATCH",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<NotificationResponse>",
+          "fields": [
+            {
+              "name": "id",
+              "type": "UUID"
+            },
+            {
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "name": "type",
+              "type": "NotificationType"
+            },
+            {
+              "name": "isRead",
+              "type": "boolean"
+            },
+            {
+              "name": "createdAt",
+              "type": "datetime"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/notifications/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/classes",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        },
+        {
+          "name": "courseId",
+          "type": "UUID"
+        },
+        {
+          "name": "teacherId",
+          "type": "UUID"
+        },
+        {
+          "name": "semester",
+          "type": "integer"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "scheduleDay",
+          "type": "DayOfWeek"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<ClassResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/classes/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<ClassResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/classes",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "ClassRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<ClassResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/classes/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "ClassRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<ClassResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/classes/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/dashboard/admin",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<AdminDashboardResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/dashboard/teacher",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<TeacherDashboardResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/dashboard/student",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<StudentDashboardResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/students",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "departmentId",
+          "type": "UUID"
+        },
+        {
+          "name": "status",
+          "type": "StudentStatus"
+        },
+        {
+          "name": "semester",
+          "type": "Integer"
+        },
+        {
+          "name": "search",
+          "type": "string"
+        },
+        {
+          "name": "page",
+          "type": "Integer"
+        },
+        {
+          "name": "limit",
+          "type": "Integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<StudentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "StudentResponse[]"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/students/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<StudentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "StudentResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/students",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "CreateStudentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<StudentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "StudentResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/students/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "UpdateStudentRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<StudentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "StudentResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/students/{id}/status",
+      "method": "PATCH",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "UpdateStudentStatusRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<StudentResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "StudentResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/students/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "search",
+          "type": "string"
+        },
+        {
+          "name": "role",
+          "type": "Role"
+        },
+        {
+          "name": "status",
+          "type": "UserStatus"
+        },
+        {
+          "name": "page",
+          "type": "Integer"
+        },
+        {
+          "name": "limit",
+          "type": "Integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<UserResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "UserResponse[]"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<UserResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "UserResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "CreateUserRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<UserResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "UserResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "UpdateUserRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<UserResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "UserResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users/{id}/status",
+      "method": "PATCH",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "UpdateUserStatusRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<UserResponse>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "UserResponse"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/users/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/v1/teachers",
+      "method": "GET",
+      "path_params": [],
+      "query_params": [
+        {
+          "name": "departmentId",
+          "type": "UUID"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "search",
+          "type": "string"
+        },
+        {
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "type": "integer"
+        },
+        {
+          "name": "sortBy",
+          "type": "string"
+        },
+        {
+          "name": "sortDir",
+          "type": "string"
+        }
+      ],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ListResponse<TeacherResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/teachers/{id}",
+      "method": "GET",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<TeacherResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/teachers",
+      "method": "POST",
+      "path_params": [],
+      "query_params": [],
+      "request_model": {
+        "name": "TeacherRequest",
+        "fields": []
+      },
+      "response_models": {
+        "201": {
+          "name": "ApiResponse<TeacherResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/teachers/{id}",
+      "method": "PUT",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": {
+        "name": "TeacherRequest",
+        "fields": []
+      },
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<TeacherResponse>",
+          "fields": []
+        }
+      }
+    },
+    {
+      "path": "/api/v1/teachers/{id}",
+      "method": "DELETE",
+      "path_params": [
+        {
+          "name": "id",
+          "type": "UUID"
+        }
+      ],
+      "query_params": [],
+      "request_model": null,
+      "response_models": {
+        "200": {
+          "name": "ApiResponse<Void>",
+          "fields": [
+            {
+              "name": "data",
+              "type": "Void"
+            },
+            {
+              "name": "message",
+              "type": "String"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "auth_scheme": "bearer_jwt",
+  "confidence": "inferred",
+  "source_commit_sha": "bf6cbef1d29a36a2214a17e497db68971d82d7bd",
+  "generated_at": "2026-10-07T19:01:03.289762Z",
+  "contract_check": {
+    "confidence": "inferred",
+    "contract_match_score": 0.84,
+    "checked_at": "2026-10-07T19:01:03.289772Z",
+    "contract_issues": [
+      {
+        "type": "unmatched_call",
+        "method": "PUT",
+        "path": "/${id}",
+        "resolution": "unverified"
+      },
+      {
+        "type": "unmatched_call",
+        "method": "DELETE",
+        "path": "/${id}",
+        "resolution": "unverified"
+      },
+      {
+        "type": "unmatched_call",
+        "method": "PATCH",
+        "path": "/${id}/${suffix}",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/grades",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/grades/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/grades",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/grades/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/api/v1/grades/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/courses",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/courses/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/courses",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/courses/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/api/v1/courses/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/enrollments",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/enrollments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/enrollments",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/enrollments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/api/v1/enrollments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/departments",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/departments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/departments",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/departments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/api/v1/departments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/assignments",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/assignments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/assignments",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/assignments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/api/v1/assignments/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/attendance",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/attendance/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/attendance",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/attendance/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/classes",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/classes/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/classes",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "PUT",
+        "path": "/api/v1/classes/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "DELETE",
+        "path": "/api/v1/classes/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/students",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "GET",
+        "path": "/api/v1/students/{id}",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      },
+      {
+        "type": "missing_endpoint",
+        "method": "POST",
+        "path": "/api/v1/students",
+        "relevance": "unknown",
+        "resolution": "unverified"
+      }
+    ]
+  }
+}
